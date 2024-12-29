@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call for Submissions</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafc;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2em;
+        }
+
+        /* Grid Container */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            height: 70vh;
+        }
+
+        /* Grid Item (Rectangle) */
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .grid-item a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .modal-content p {
+            margin: 15px 0;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(6, 1fr);
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Call for Submissions</h1>
+    <div class="grid-container">
+        <!-- 6 Rectangles with Links -->
+        <div class="grid-item"><a href="#" data-popup="Submit your short stories for consideration.">Short Stories</a></div>
+        <div class="grid-item"><a href="#" data-popup="Submit your poetry for our upcoming anthology.">Poetry</a></div>
+        <div class="grid-item"><a href="#" data-popup="Feature articles are open for submissions.">Feature Articles</a></div>
+        <div class="grid-item"><a href="#" data-popup="We are accepting creative essays.">Essays</a></div>
+        <div class="grid-item"><a href="#" data-popup="Submit your photography portfolios.">Photography</a></div>
+        <div class="grid-item"><a href="#" data-popup="Open call for visual art submissions.">Visual Art</a></div>
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2>Submission Details</h2>
+            <p id="modal-text">This is the modal text.</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for Modal Popup
+        const modal = document.getElementById('modal');
+        const modalText = document.getElementById('modal-text');
+        const closeModal = document.getElementById('closeModal');
+        const links = document.querySelectorAll('.grid-item a');
+
+        // Open Modal on Link Click
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const popupContent = link.getAttribute('data-popup');
+                modalText.textContent = popupContent;
+                modal.style.display = 'flex';
+            });
+        });
+
+        // Close Modal
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Close Modal on Outside Click
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

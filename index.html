@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Fi Press, Inc. </title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9fafc;
+            display: flex;
+            flex-direction: row;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 2em;
+        }
+
+        /* Sidebar Styles */
+        .sidebar {
+            width: 300px;
+            background-color: #0078D7;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .sidebar h2 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            border-bottom: 1px solid white;
+            padding-bottom: 10px;
+        }
+
+        .sidebar p {
+            margin: 10px 0;
+            font-size: 1em;
+            line-height: 1.4;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar strong {
+            font-size: 1.1em;
+        }
+
+        .sidebar .prize-btn {
+            margin-top: 20px;
+            display: inline-block;
+            padding: 10px 15px;
+            text-align: center;
+            background-color: #FFD700;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar .prize-btn:hover {
+            background-color: #E6C200;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        /* Grid Layout for 4 Rectangles */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Rectangle Styling */
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+            padding: 40px;
+            min-height: 200px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .grid-item a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+        }
+
+        .modal-content p {
+            margin: 15px 0;
+        }
+
+        .modal-content .download-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #0078D7;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.2s;
+        }
+
+        .modal-content .download-btn:hover {
+            background-color: #005BB5;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div>
+            <h2>Payment Information</h2>
+            <p><strong>We pay:</strong></p>
+            <ul>
+                <li><strong>$15</strong> per poem</li>
+                <li><strong>$45</strong> per short story</li>
+                <li><strong>$60</strong> per essay</li>
+            </ul>
+            <p>Essays can cover topics like:</p>
+            <ul>
+                <li>Manufacturing</li>
+                <li>City Planning</li>
+                <li>Environmental Engineering</li>
+                <li>Philosophy</li>
+                <li>Economics</li>
+                <li>Psychology</li>
+                <li>Sustainability</li>
+            
+            </ul>
+        </div>
+        <a href="prize.html" class="prize-btn" target="_blank">Learn More About the Prize</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1> Falkland Islands Press, Inc.</h1>
+        <div class="grid-container">
+            <div class="grid-item"><a href="" data-popup="Business Portfolio Investment Prospectus" data-download="Files/Business_Portfolio_Investment_Prospectus">Business Portfolio Investment Prospectus</a></div>
+            <div class="grid-item"><a href="#" data-popup="Falkland Islands Press Business Plan" data-download="Files/Falkland_Islands_Press_Business_Plan">Falkland Islands Press Business Plan</a></div>
+            <div class="grid-item"><a href="#" data-popup="Loan Proposal Computer Factory" data-download="Files/Loan_Proposal_Computer_Factory">Loan Proposal Computer Factory</a></div>
+            <div class="grid-item"><a href="#" data-popup="The Maplewood Review Annual" data-download="Files/Newsletter.pdf">The Maplewood Review Annual</a></div>
+        </div>
+    </div>
+
+    <!-- Modal Popup -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" id="closeModal">&times;</span>
+            <h2>Document Information</h2>
+            <p id="modal-text"></p>
+            <a id="downloadBtn" href="#" class="download-btn" target="_blank">Download</a>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('modal');
+        const modalText = document.getElementById('modal-text');
+        const downloadBtn = document.getElementById('downloadBtn');
+        document.querySelectorAll('.grid-item a').forEach(link => {
+            link.addEventListener('click', e => {
+                e.preventDefault();
+                modalText.textContent = link.dataset.popup;
+                downloadBtn.href = link.dataset.download;
+                modal.style.display = 'flex';
+            });
+        });
+        document.getElementById('closeModal').onclick = () => modal.style.display = 'none';
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Falkland Islands Press, Inc.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .doc-list {
+            list-style: none;
+            padding: 0;
+        }
+        .doc-list li {
+            margin: 10px 0;
+        }
+        .doc-list a {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+        .doc-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>The Falkland Islands Press, Inc.</h1>
+    <p>Click on the links below to open Word documents in a new tab:</p>
+    <ul class="doc-list">
+        <li><a href="Files/Falkland_Islands_Press_Business_Plan.docx" target="_blank">FI Press Business plan</a></li>
+        <li><a href="Files/Business_Portfolio_Investment_Prospectus.docx" target="_blank">Investement Prospectus</a></li>
+        <li><a href="Files/Loan_Proposal_Computer_Factory.docx" target="_blank">Loan proposal</a></li>
+    </ul>
+
+    <div class="info-paragraph">
+        At <strong>The Maplewood Review</strong>, we pay $50 per article, $45 per short story, and $15 per poem. Additionally, we offer a <strong>$17,500 prize</strong> for the best philosophical manuscript, based on selected prompts.  
+        Learn more on our <a href="Prizepage.html" target="_blank">Prize Page</a>.
+    </div>
+
+
+
+
+
+</body>
+</html> -->

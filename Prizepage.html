@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* 6 columns */
+            grid-template-rows: repeat(4, 1fr); /* 4 rows */
+            gap: 10px;
+            margin: 0 auto;
+            max-width: 80%;
+        }
+
+        .grid-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: center;
+            border: 2px solid #2980b9;
+            border-radius: 5px;
+            height: 100px;
+            text-decoration: none;
+        }
+
+        .grid-item:hover {
+            background-color: #2980b9;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document Links Grid</h1>
+    <div class="grid-container">
+        <!-- 24 Grid Spots with Document Links -->
+        <a href="doc1.docx" target="_blank" class="grid-item">Document 1</a>
+        <a href="doc2.docx" target="_blank" class="grid-item">Document 2</a>
+        <a href="doc3.docx" target="_blank" class="grid-item">Document 3</a>
+        <a href="doc4.docx" target="_blank" class="grid-item">Document 4</a>
+        <a href="doc5.docx" target="_blank" class="grid-item">Document 5</a>
+        <a href="doc6.docx" target="_blank" class="grid-item">Document 6</a>
+        <a href="doc7.docx" target="_blank" class="grid-item">Document 7</a>
+        <a href="doc8.docx" target="_blank" class="grid-item">Document 8</a>
+        <a href="doc9.docx" target="_blank" class="grid-item">Document 9</a>
+        <a href="doc10.docx" target="_blank" class="grid-item">Document 10</a>
+        <a href="doc11.docx" target="_blank" class="grid-item">Document 11</a>
+        <a href="doc12.docx" target="_blank" class="grid-item">Document 12</a>
+        <a href="doc13.docx" target="_blank" class="grid-item">Document 13</a>
+        <a href="doc14.docx" target="_blank" class="grid-item">Document 14</a>
+        <a href="doc15.docx" target="_blank" class="grid-item">Document 15</a>
+        <a href="doc16.docx" target="_blank" class="grid-item">Document 16</a>
+        <a href="doc17.docx" target="_blank" class="grid-item">Document 17</a>
+        <a href="doc18.docx" target="_blank" class="grid-item">Document 18</a>
+        <a href="doc19.docx" target="_blank" class="grid-item">Document 19</a>
+        <a href="doc20.docx" target="_blank" class="grid-item">Document 20</a>
+        <a href="doc21.docx" target="_blank" class="grid-item">Document 21</a>
+        <a href="doc22.docx" target="_blank" class="grid-item">Document 22</a>
+        <a href="doc23.docx" target="_blank" class="grid-item">Document 23</a>
+        <a href="doc24.docx" target="_blank" class="grid-item">Document 24</a>
+    </div>
+</body>
+</html>
